@@ -1,6 +1,7 @@
 
 
 import express, { Request, Response } from "express";
+import fs from "fs";
 const personalProjects = [{
     name: "FPS DEMO",
     genre: "FPS",
@@ -37,9 +38,10 @@ export const router = express.Router();
 
 router.get("/", async (req: Request, res: Response) => {
     try {
-
-        res.status(200).send(personalProjects);
+        let result = fs.readFileSync(`${process.cwd()}/src/storage/storage.json`, { encoding: "utf8" });
+        res.status(200).send(JSON.parse(result));
     } catch (e: any) {
         res.status(500).send(e.message);
     }
+
 });
