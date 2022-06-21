@@ -1,0 +1,11 @@
+@url = http://127.0.0.1:3000/v1
+@devurl = ""
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsImlkIjoxLCJmaXJzdG5hbWUiOiJEYW1pYW4iLCJsYXN0bmFtZSI6IkJlT25lIiwicm9sZV9pZCI6MSwiaWF0IjoxNjQ0ODI0MjAxLCJleHAiOjE3MzEyMjQyMDF9.53IWz22oMDIZym8Hp_NUYhCW1QqTqi7UW9P-7ZQfrVM
+
+################################
+GET http://localhost:7000/api/webhooks HTTP/1.1
+
+###
+
+GET http://localhost:4002/api/projects/ HTTP/1.1
+

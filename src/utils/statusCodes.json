@@ -1,0 +1,16 @@
+{
+    "readme": "this is where statusCode.codesender gets its list of errors and descriptions",
+
+    "0": "Successful",
+    "1": "Incorrect params",
+    "2": "Jwt id mismatch / forbidden",
+    "3": "login after regester failed",
+    "4":"status is undefined",
+    "5":"status is not approved or denied strings",
+    "6": "No admin role found",
+    "7": "Difference to pay",
+    "8": "couldnt upadte user balance",
+    "10": "no settings found",
+    "11":"No sales for book"
+
+}
