@@ -20,6 +20,31 @@ if (!process.env.PORT) {
   process.exit(1);
 }
 
+import { Client, Pool } from 'pg';
+const connectDb = async () => {
+  try {
+    const pool = new Pool({
+      user: 'bxlojpczpffzad',
+      host: 'ec2-3-248-121-12.eu-west-1.compute.amazonaws.com',
+      database: 'd7v7d5q2v5gqm3',
+      password: '4dbf85bd36682b4a5e260cf113d9be907fd546dddaaa165809f639f279edc9a1',
+      port: 5432, ssl: {
+        rejectUnauthorized: false
+      }
+    });
+
+    await pool.connect()
+    const res = await pool.query('SELECT * FROM projects')
+    console.log(res.rows)
+    await pool.end()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+connectDb()
+
+
 const PORT: number = parseInt(process.env.PORT as string, 10);
 
 const app = express();

@@ -38,7 +38,7 @@ export const router = express.Router();
 
 router.get("/", async (req: Request, res: Response) => {
     try {
-        let result = fs.readFileSync(`${process.cwd()}/src/storage/storage.json`, { encoding: "utf8" });
+        const result = fs.readFileSync(`${process.cwd()}/src/storage/storage.json`, { encoding: "utf8" });
         res.status(200).send(JSON.parse(result));
     } catch (e: any) {
         res.status(500).send(e.message);

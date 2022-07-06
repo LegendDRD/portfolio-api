@@ -17,6 +17,7 @@ const express_1 = __importDefault(require("express"));
 exports.basicTest = express_1.default.Router();
 exports.basicTest.get("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
+        console.log(req.body.aa.toString());
         res.status(200).send("OK");
     }
     catch (e) {
