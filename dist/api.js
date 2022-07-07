@@ -22,15 +22,6 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
@@ -50,28 +41,6 @@ statusCodeSender_1.default.start();
 if (!process.env.PORT) {
     process.exit(1);
 }
-const pg_1 = require("pg");
-const connectDb = () => __awaiter(void 0, void 0, void 0, function* () {
-    try {
-        const pool = new pg_1.Pool({
-            user: 'bxlojpczpffzad',
-            host: 'ec2-3-248-121-12.eu-west-1.compute.amazonaws.com',
-            database: 'd7v7d5q2v5gqm3',
-            password: '4dbf85bd36682b4a5e260cf113d9be907fd546dddaaa165809f639f279edc9a1',
-            port: 5432, ssl: {
-                rejectUnauthorized: false
-            }
-        });
-        yield pool.connect();
-        const res = yield pool.query('SELECT * FROM projects');
-        console.log(res.rows);
-        yield pool.end();
-    }
-    catch (error) {
-        console.log(error);
-    }
-});
-connectDb();
 const PORT = parseInt(process.env.PORT, 10);
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)());

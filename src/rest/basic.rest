@@ -7,5 +7,43 @@ GET http://localhost:7000/api/webhooks HTTP/1.1
 
 ###
 
-GET http://localhost:4002/api/projects/ HTTP/1.1
+GET http://localhost:4002/api/projects/ 
 
+###
+
+GET https://portfolio-api-drd.herokuapp.com/api/projects/ 
+###
+
+POST  http://localhost:4002/api/projects/insert
+Content-Type: application/json
+
+{
+    "title":"First Person Shooter Multiplayer (No name yet)",
+    "description":"This is my first attempting to create a roguelike first person shooter similar to Call of Duty Black Ops: Zombies. Currently this game is still a work in progress and more updates will roll out over the coming months. The game takes place in a distance future where the player will take the role of a sentient robot with some friends to take out the robot hive mind which is trying to whip out humanity.",
+    "images":["https://res.cloudinary.com/drdportfolio/image/upload/v1657138205/Projects/FPS%20GAME/FPS_Demo_Screenshot_kraaoo.png",
+    "https://res.cloudinary.com/drdportfolio/image/upload/v1657138537/Projects/FPS%20GAME/FPS_Demo_Screenshot2_ex6ja7.png",
+    "https://res.cloudinary.com/drdportfolio/image/upload/v1657138539/Projects/FPS%20GAME/FPS_Demo_Screenshot1_nh79qg.png"],
+    "videos":["https://res.cloudinary.com/drdportfolio/video/upload/v1657138370/Projects/FPS%20GAME/FPS_Demo_reefgj.wmv"],
+    "files":null,
+    "tags":"3D",
+    "timelog":null,
+    "external":null,
+    "status": "Inprogress"
+}
+
+###
+
+PUT http://localhost:4002/api/projects/update/3
+Content-Type: application/json
+
+{
+    "title":"Death Bots",
+    "description":"Death bots was an attempted at a fast paced first person shooter for a Game Jam in 2019. Inspired by Risk of Rain 2.",
+    "images":["https://res.cloudinary.com/drdportfolio/image/upload/v1657136464/Projects/Deathbots/Menu_yajeu8.png",
+    "https://res.cloudinary.com/drdportfolio/image/upload/v1657133092/Projects/Neon%20Runner/unnamed_1_lhlkeh.webp",
+    "https://res.cloudinary.com/drdportfolio/image/upload/v1657136466/Projects/Deathbots/gameplay_iuh1zy.png"],
+    "videos":null,
+    "files":null,
+    "tags":"3D",
+    "timelog":null
+}
