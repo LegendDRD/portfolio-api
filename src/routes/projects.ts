@@ -15,3 +15,23 @@ router.get("/", async (req: Request, res: Response) => {
         res.status(500).send(e.message);
     }
 });
+
+router.get("/vr", async (req: Request, res: Response) => {
+    try {
+        const results = await db.asyncPool(`SELECT * FROM projects WHERE tags ='VR'`, []);
+        // console.log(results.rows)
+        return res.send(results.rows);
+    } catch (e: any) {
+        res.status(500).send(e.message);
+    }
+});
+
+router.get("/games", async (req: Request, res: Response) => {
+    try {
+        const results = await db.asyncPool(`SELECT * FROM projects WHERE tags !='VR'`, []);
+        // console.log(results.rows)
+        return res.send(results.rows);
+    } catch (e: any) {
+        res.status(500).send(e.message);
+    }
+});
