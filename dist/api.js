@@ -30,8 +30,8 @@ const dotenv = __importStar(require("dotenv"));
 dotenv.config();
 const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
-const basic_test_1 = require("./routes/basic.test");
 const projects_1 = require("./routes/projects");
+const art_1 = require("./routes/art");
 const error_middleware_1 = require("./middleware/error.middleware");
 const not_found_middleware_1 = require("./middleware/not-found.middleware");
 const statusCodeSender_1 = __importDefault(require("./utils/statusCodeSender"));
@@ -49,8 +49,9 @@ app.use(express_1.default.urlencoded({ extended: true, limit: '1000mb' }));
 // Routes Middlewares
 app.use('/public', express_1.default.static('./public'));
 // USER ROUTES
-app.use("/api/test", basic_test_1.basicTest);
+// app.use("/api/test", basicTest);
 app.use("/api/projects", projects_1.router);
+app.use("/api/art", art_1.router);
 app.use(error_middleware_1.errorHandler);
 app.use(not_found_middleware_1.notFoundHandler);
 app.listen(PORT, () => {

@@ -5,6 +5,7 @@ import cors from "cors";
 import helmet from "helmet";
 import { basicTest } from "./routes/basic.test";
 import { router as project } from "./routes/projects";
+import { router as art } from "./routes/art";
 import { errorHandler } from "./middleware/error.middleware";
 import { notFoundHandler } from "./middleware/not-found.middleware";
 
@@ -31,9 +32,9 @@ app.use(express.urlencoded({ extended: true, limit: '1000mb' }));
 // Routes Middlewares
 app.use('/public', express.static('./public'));
 // USER ROUTES
-app.use("/api/test", basicTest);
+// app.use("/api/test", basicTest);
 app.use("/api/projects", project);
-
+app.use("/api/art", art);
 app.use(errorHandler);
 app.use(notFoundHandler);
 
